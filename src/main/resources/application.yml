@@ -2,9 +2,9 @@ spring:
   application:
     name: api
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:keycloak_app}
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:postgres}
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/${DB_NAME:appdb}
+    username: ${DB_USERNAME:appuser}
+    password: ${DB_PASSWORD:apppass}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -18,11 +18,10 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${KEYCLOAK_ISSUER_URI}
-          jwk-set-uri: ${KEYCLOAK_JWK_SET_URI}
-
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8080/realms/app}
+          jwk-set-uri: ${KEYCLOAK_JWK_SET_URI:http://localhost:8080/realms/app/protocol/openid-connect/certs}
 server:
-  port: ${SERVER_PORT:8080}
+  port: ${SERVER_PORT:8081}
   error:
     include-message: always
     include-binding-errors: always

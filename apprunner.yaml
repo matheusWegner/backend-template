@@ -19,16 +19,16 @@ run:
     - name: SPRING_PROFILES_ACTIVE
       value: "prod"
     - name: DB_HOST
-      value: ""  # Set via App Runner environment variables
+      value: ""
     - name: DB_PORT
       value: "5432"
     - name: DB_NAME
       value: "keycloak_app"
     - name: DB_USERNAME
-      value: ""  # Set via App Runner secrets
+      value: ""
     - name: DB_PASSWORD
-      value: ""  # Set via App Runner secrets
+      value: ""
     - name: KEYCLOAK_ISSUER_URI
-      value: ""  # Set via App Runner environment variables
+      value: ""
     - name: KEYCLOAK_JWK_SET_URI
-      value: ""  # Set via App Runner environment variables
+      value: ""
