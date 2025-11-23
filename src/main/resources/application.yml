@@ -51,5 +51,7 @@ logging:
     root: INFO
     com.example.api: INFO
     org.springframework.security: INFO
+    org.apache.coyote.http11: WARN
+    org.apache.tomcat.util.net: WARN
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
