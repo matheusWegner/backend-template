@@ -8,7 +8,7 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  ECR_REPOSITORY: keycloak-starter-backend
+  ECR_REPOSITORY: template-starter-backend
 
 jobs:
   deploy:
@@ -44,7 +44,7 @@ jobs:
         id: deploy-apprunner
         uses: awslabs/amazon-app-runner-deploy@main
         with:
-          service: keycloak-starter-backend
+          service: template-starter-backend
           image: ${{ steps.build-image.outputs.image }}
           access-role-arn: ${{ secrets.APP_RUNNER_ROLE_ARN }}
           region: ${{ env.AWS_REGION }}
