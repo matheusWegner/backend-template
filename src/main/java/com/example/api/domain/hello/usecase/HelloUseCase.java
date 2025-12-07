@@ -21,7 +21,7 @@ public class HelloUseCase {
     public String getHelloMessage() {
         return currentUserQuery.getCurrentUser()
                 .map(this::buildPersonalizedGreeting)
-                .orElse("Hello, guest");
+                .orElse("Hello, guest user!");
     }
 
     public Hello createHello(Hello hello) {
